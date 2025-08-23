@@ -2,6 +2,18 @@
 #include <string>
 #include "PhoneBook.hpp"
 
+static std::string  get_input(std::string message)
+{
+  std::string input;
+
+  input = "";
+  while (input.length() == 0)
+  {
+    std::cout << message;
+    std::getline(std::cin, input);
+  }
+  return (input);
+}
 
 int main()
 {
@@ -10,13 +22,12 @@ int main()
 
   while (true)
   {
-    std::cout << "Input: ";
-    std::cin >> input;
-    if (input.compare("exit") == 0)
+    input = get_input("Input: ");
+    if (input.compare("EXIT") == 0)
       break ;
-    else if (input.compare("add") == 0)
+    else if (input.compare("ADD") == 0)
       pb.add_contact();
-    else if (input.compare("search") == 0)
+    else if (input.compare("SEARCH") == 0)
       pb.search_contact();
   }
   return (0);
