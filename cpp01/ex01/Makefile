@@ -1,7 +1,7 @@
-SRC = megaphone.cpp
-NAME = megaphone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
+NAME = zombie
 
 all: $(NAME)
 
@@ -14,4 +14,3 @@ clean:
 fclean: clean
 
 re: fclean all
-.PHONY: all clean fclean re

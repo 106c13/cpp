@@ -2,6 +2,10 @@
 #include <iostream>
 #include "Zombie.hpp"
 
+Zombie::Zombie()
+{
+	_name = "";
+}
 
 Zombie::Zombie(std::string name)
 {
@@ -11,6 +15,11 @@ Zombie::Zombie(std::string name)
 Zombie::~Zombie()
 {
 	std::cout << _name << " died\n";
+}
+
+void	Zombie::set_name(std::string name)
+{
+	_name = name;
 }
 
 void	Zombie::announce(void)
