@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-NAME = ex03
+SRC = main.cpp Harl.cpp
+NAME = ex05
 
 all: $(NAME)
 
