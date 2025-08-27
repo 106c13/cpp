@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Harl.cpp
-NAME = ex05
+NAME = ex06
 
 all: $(NAME)
 
@@ -14,3 +14,4 @@ clean:
 fclean: clean
 
 re: fclean all
+.PHONY: all clean fclean re

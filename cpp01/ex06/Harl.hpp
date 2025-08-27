@@ -13,7 +13,7 @@ private:
 public:
 	Harl();
 	~Harl();
-	void	complain( int level );
+	void	complain( std::string level );
 };
 
 #endif
