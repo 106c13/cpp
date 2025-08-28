@@ -9,7 +9,7 @@ int main( void )
 	Point	a(-10, 0);
 	Point	b(0, 10);
 	Point	c(10, 0);
-	Point	p1(2.5, 1);
+	Point	p1(0, 0);
 	Point	p2(20.5, 1);
 	Point	p3(-10, 0.1);
 

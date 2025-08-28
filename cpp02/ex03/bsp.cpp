@@ -15,5 +15,5 @@ bool	bsp(Point const a, Point const b, Point const c, Point const p)
     bool	has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
     bool	has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
 
-    return !(has_neg && has_pos);
+    return (!(has_neg && has_pos) && d1 != 0 && d2 != 0 && d3 != 0);
 }
