@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Fixed.cpp 
-NAME = ex00
+NAME = ex01
 
 all: $(NAME)
 
