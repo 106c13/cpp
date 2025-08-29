@@ -2,6 +2,7 @@
 
 int	main()
 {
+
 	ClapTrap	c1("John");
 	ClapTrap	c2("Karlos");
 	ClapTrap	c3;
