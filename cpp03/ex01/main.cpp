@@ -1,28 +1,12 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int	main()
 {
-	ClapTrap	c1("John");
-	ClapTrap	c2("Karlos");
-
-	c1.attack("Karlos");
-	c2.takeDamage(3);
-	c2.attack("John");
-	c1.takeDamage(5);
-	c1.beRepaired(5);
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
-	c1.attack("Karlos");
+	ScavTrap	s1("Rex");
+	ScavTrap	s2(s1);
+	ClapTrap	*s3 = new ScavTrap(s2);
+	s2.attack("John");
+	delete s3;
 	return (0);
 }
