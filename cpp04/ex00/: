@@ -7,9 +7,11 @@ Dog::Dog()
 	std::cout << "🐶 Dog default constructor called\n";
 }
 
-Dog::Dog(const Dog& src) : Animal(src)
+Dog::Dog(const Dog& src) : Animal()
 {
 	std::cout << "🐶 Dog copy constructor called\n";
+	Animal();
+	type = src.type;
 }
 
 Dog&	Dog::operator=(const Dog& src)
@@ -22,7 +24,7 @@ Dog&	Dog::operator=(const Dog& src)
 
 Dog::~Dog()
 {
-	std::cout << "🐶 Dog destructor called\n";
+	std::cout << "🐶 Dog desctructor called\n";
 }
 
 void	Dog::makeSound() const

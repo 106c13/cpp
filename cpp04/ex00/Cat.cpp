@@ -7,15 +7,12 @@ Cat::Cat()
 	std::cout << "🐱 Cat default constructor called\n";
 }
 
-Cat::Cat(const Cat& src) : Animal()
+Cat::Cat(const Cat& src) : Animal(src)
 {
 	std::cout << "🐱 Cat copy constructor called\n";
-	if (this == &src)
-		return ;
-	type = src.type;
 }
 
-Cat	Cat::operator=(const Cat& src)
+Cat&	Cat::operator=(const Cat& src)
 {
 	std::cout << "🐱 Cat copy operator called\n";
 	if (this != &src)
@@ -25,7 +22,7 @@ Cat	Cat::operator=(const Cat& src)
 
 Cat::~Cat()
 {
-	std::cout << "🐱 Cat desctructor called\n";
+	std::cout << "🐱 Cat destructor called\n";
 }
 
 void	Cat::makeSound() const
