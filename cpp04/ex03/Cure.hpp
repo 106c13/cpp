@@ -13,8 +13,8 @@ public:
 
     Cure&   operator=(const Cure& src);
 
-    virtual AMateria*   clone() const;
-    virtual void        use(ICharacter& target);
+    AMateria*   clone() const;
+    void        use(ICharacter& target);
 };
 
 #endif
