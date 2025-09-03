@@ -27,8 +27,9 @@ Cat&	Cat::operator=(const Cat& src)
 	if (this != &src)
 	{
 		type = src.type;
+		Brain* tmp = new Brain(*src._brain);
 		delete _brain;
-		_brain = new Brain(*src._brain); 
+		_brain = tmp; 
 	}
 	return (*this);
 }

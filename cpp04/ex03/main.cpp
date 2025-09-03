@@ -30,16 +30,18 @@ int main()
 	std::cout << "===============================================\n";
 	{
 		Character pl1 = Character("Karlos");
+		AMateria* ice = new Ice();
+		AMateria* cure = new Cure();
+
 
 		IMateriaSource* src = new MateriaSource();
 
-		src->learnMateria(new Ice());
-		src->learnMateria(new Cure());
+		src->learnMateria(ice);
+		src->learnMateria(cure);
 
 		AMateria* m1 = src->createMateria("ice");
 		AMateria* m2 = src->createMateria("cure");
 
-		pl1.equip(m1);
 		pl1.equip(m1);
 		pl1.equip(m2);
 
@@ -47,7 +49,6 @@ int main()
 		
 		pl2 = pl1;
 		pl2.use(0, pl1);
-		pl2.use(3, pl1);
 
 		delete src;
 	}

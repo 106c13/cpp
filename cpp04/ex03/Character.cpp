@@ -62,6 +62,14 @@ void	Character::equip(AMateria* m)
 		return;
 	for (int i = 0; i < 4; i++)
 	{
+		if (_inventory[i] == m)
+		{
+			std::cout << "Can't equip twice\n";
+			return ;
+		}
+	}
+	for (int i = 0; i < 4; i++)
+	{
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
@@ -77,12 +85,17 @@ void	Character::unequip(int idx)
 	if (idx < 0 || idx >= 4 || !_inventory[idx])
 		return;
 	std::cout << _name << " unequips " << _inventory[idx]->getType() << " from slot " << idx << "\n";
-	_inventory[idx] = NULL; // don't delete, just remove
+	_inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx >= 4 || !_inventory[idx])
+	if (idx < 0 || idx >= 4)
 		return;
+	if (!_inventory[idx])
+	{
+		std::cout << "Slot " << idx << " is empty\n";
+		return ;
+	}
 	_inventory[idx]->use(target);
 }

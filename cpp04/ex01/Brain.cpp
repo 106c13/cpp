@@ -31,7 +31,7 @@ Brain&	Brain::operator=(const Brain& src)
 
 std::string	Brain::getIdea(int i) const
 {
-	if (i < 0 || i > 100)
+	if (i < 0 || i >= 100)
 		return ("");
 	return (ideas[i]);
 }

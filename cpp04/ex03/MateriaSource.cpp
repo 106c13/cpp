@@ -55,7 +55,7 @@ void	MateriaSource::learnMateria(AMateria* m)
 	{
 		if (_inventory[i] == NULL)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			std::cout << "Learned materia: " << _inventory[i]->getType() << "\n";
 			return;
 		}
