@@ -27,20 +27,27 @@ public:
 	bool				isSigned() const;
 	int					getSignGrade() const;
 	int					getExecuteGrade() const;
+	virtual void		execute(Bureaucrat const& executor) const = 0;
 
 	class GradeTooHighException : public std::exception
     {
 		public:
-	        const char* what() const throw();
+	        const char*	what() const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
 		public:
-	        const char* what() const throw();
+	        const char*	what() const throw();
+    };
+
+    class FormNotSignedException : public std::exception
+    {
+		public:
+	        const char*	what() const throw();
     };
 };
 
-std::ostream & operator<<(std::ostream & o, Form const & form);
+std::ostream & operator<<(std::ostream & o, AForm const & form);
 
 #endif
