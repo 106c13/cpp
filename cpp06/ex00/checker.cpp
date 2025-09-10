@@ -12,6 +12,16 @@ size_t	skipDigit(const std::string& literal, size_t i, char delim)
 	return (i);
 }
 
+bool	isChar(const std::string& literal)
+{
+	if (literal[0] >= 32 && literal[0] <= 127 && literal[1] == '\0')
+	{
+		if (literal[0] < '0' || literal[0] > '9')
+			return (true);
+	}
+	return (false);
+}
+
 bool	isInt(const std::string& literal)
 {
 	size_t	i = 0;

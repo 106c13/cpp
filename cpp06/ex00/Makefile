@@ -1,10 +1,10 @@
 CC = c++
-#CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp ScalarConverter.cpp checker.cpp
 OBJ = $(SRC:.cpp=.o)
 
-NAME = ex03
+NAME = ex00
 
 all: $(NAME)
 

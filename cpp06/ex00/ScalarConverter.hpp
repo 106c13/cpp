@@ -12,12 +12,10 @@ private:
 
 	ScalarConverter&	operator=(const ScalarConverter& src);
 
-	static void	print_char(int value);
-	static void	print_char(double value);
-	static void	print_char(float value);
-
-	static void	print_float(int value);
-	static void	print_double(int value);
+	static void	print(char value);
+	static void	print(long value);
+	static void	print(double value);
+	static void	print(float value);
 public:
 	static void	convert(const std::string& literal);
 
@@ -25,6 +23,7 @@ public:
 
 /* checker.cpp */
 size_t	skipDigit(const std::string& literal, size_t i, char delim);
+bool	isChar(const std::string& literal);
 bool	isInt(const std::string& literal);
 bool	isDouble(const std::string& literal);
 bool	isFloat(const std::string& literal);
