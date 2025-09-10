@@ -62,6 +62,11 @@ void	ScalarConverter::print(long value)
 /* For DOUBLE */
 void	ScalarConverter::print(double value)
 {
+	bool	hasFract = false;
+
+	if (value != static_cast<long>(value))
+		hasFract = true;
+
 	if (value < 0 || value > 255)
 		std::cout << "Char: Out of range\n";
 	else if (value < 32 || value > 126)
@@ -74,15 +79,25 @@ void	ScalarConverter::print(double value)
 	else
 		std::cout << "Int: " <<  static_cast<int>(value) << std::endl;
 
-	std::cout << "Double: " << value << std::endl;
-
-	std::cout << "Float: " <<  static_cast<float>(value) << "f" << std::endl;
+	std::cout << "Double: " << value;
+	if (!hasFract)
+		std::cout << ".0";
+	std::cout << std::endl;
+	
+	std::cout << "Float: " <<  static_cast<float>(value);
+	if (!hasFract)
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
 }
 
 /* For FLOAT */
 void	ScalarConverter::print(float value)
 {
 	long	tmp = static_cast<long>(value);
+	bool	hasFract = false;
+
+	if (value != tmp)
+		hasFract = true;
 
 	if (tmp < 0 || tmp > 255)
 		std::cout << "Char: Out of range\n";
@@ -96,9 +111,15 @@ void	ScalarConverter::print(float value)
 	else
 		std::cout << "Int: " <<  static_cast<int>(value) << std::endl;
 
-	std::cout << "Double: " <<  static_cast<double>(value) << std::endl;
+	std::cout << "Double: " <<  static_cast<double>(value);
+	if (!hasFract)
+		std::cout << ".0";
+	std::cout << std::endl;
 
-	std::cout << "Float: " <<  static_cast<float>(value) << "f" << std::endl;
+	std::cout << "Float: " <<  static_cast<float>(value);
+	if (!hasFract)
+		std::cout << ".0";
+	std::cout << "f" << std::endl;
 }
 
 void	ScalarConverter::convert(const std::string& literal)
