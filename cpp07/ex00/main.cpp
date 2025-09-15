@@ -21,8 +21,8 @@ int main()
     }
     std::cout << std::endl;
     {
-        long x = 10;
-        long y = 22;
+        const long x = 10;
+        const long y = 22;
         int z = max(x,y);
 
         std::cout << "X: " << x << "  " << "Y: " << y  << "   Z: " << z << std::endl;

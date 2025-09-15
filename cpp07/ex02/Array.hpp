@@ -22,12 +22,6 @@ public:
     const T& operator[](unsigned int index) const;
 
     unsigned int size() const;
-
-	class OutOfBoundsException : public std::exception
-	{
-		public: const char* what() const throw();
-	};
-
 };
 
 #include "Array.tpp"
