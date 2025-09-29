@@ -72,6 +72,14 @@ unsigned int	Span::longestSpan() const
 	return span;
 }
 
+void	Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    if (std::distance(begin, end) + data_.size() > size_)
+        throw SpanOverflowException();
+    data_.insert(data_.end(), begin, end);
+}
+
+
 const char*	Span::SpanOverflowException::what() const throw()
 {
 	return "Span overflow!!!";

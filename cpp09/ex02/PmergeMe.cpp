@@ -46,7 +46,7 @@ PmergeMe::PmergeMe(char **argv) {
 
 		if (!isInt(s))
             throw IsNotNumberException();
-		num = std::strtol(argv[i], NULL, 10);
+		num = strtol(argv[i], NULL, 10);
         if (num <= 0 || num > INT_MAX)
         	throw OutOfRangeException();
 
@@ -98,8 +98,6 @@ void	PmergeMe::sort()
 {
 
 }
-
-
 
 const char*	PmergeMe::IsNotNumberException::what() const throw()
 {
