@@ -1,38 +1,24 @@
 #include <iostream>
-#include <array>
 #include <string>
 #include <exception>
+#include "PmergeMe.hpp"
 
-bool	isInteger(const std::string& s){
-	size_t	pos;
-	int		num;
-
-	try {
-		num = std::stoi(s, &pos);
-		return pos == s.length() && num > 0;
-	} catch (const std::exception& e) {
-		return false;
-	}
-}
-
-bool	validate(int argc, char **argv) {
-	int	i = 1;
-
-	while (i < argc) {
-		if (!isInteger(argv[i]))
-			return false;
-		i++;
-	}
-	return true;
-}
-
-int	main(int argc, char **argv) {
-	std::array<int, 6>	nums;
-
-	if (!validate(argc, argv)) {
-		std::cout << "Error\n";
-		return 1;
-	}
-	std::cout << "Cool\n";
-	return 0;
+int main(int argc, char **argv) {
+    if (argc > 1)
+    {
+        try {
+            PmergeMe sorter(argv);
+            //sorter.sort();
+            std::cout << "Before: " << sorter.getVectorArray() << std::endl;
+            std::cout << "Before: " << sorter.getVectorArray() << std::endl;
+        }
+        catch (const std::exception& e) {
+            std::cerr << e.what() << std::endl;
+            return 1;
+        }
+    } else {
+        std::cout << "Not enought argument\n";
+        return 1;
+    }
+    return 0;
 }
