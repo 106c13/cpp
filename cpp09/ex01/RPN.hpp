@@ -2,19 +2,23 @@
 #define RPN_HPP
 
 #include <stack>
+#include <string>
 
 
 class	RPN
 {
 private:
-	stack<int>	numbers_;
-	stack<char>	operators_;
+	std::stack<int>numbers_;
+
+	int	exec_(char op);
 public:
 	RPN();
-	RPN(const RPN src);
+	RPN(const RPN& src);
 	~RPN();
 
-	RPN	operator=(const RPN src);
+	RPN&	operator=(const RPN& src);
 
-	void	
-}
+	void	calculate(const std::string& input);
+};
+
+#endif
