@@ -44,15 +44,21 @@ void	RPN::calculate(const std::string& input) {
 			number = input[i] - '0';
 			numbers_.push(number);
 		} else if (ops.find(input[i]) != std::string::npos) {
-			if (numbers_.size() < 2)
+			if (numbers_.size() < 2) {
+				std::cout << "Error\n";
 				return;
+			}
 			numbers_.push(exec_(input[i]));
 		}
-		else if (input[i] != ' ')
+		else if (input[i] != ' ') {
+			std::cout << "Error\n";
 			return;
+		}
 	}
-	if (numbers_.size() != 1)
+	if (numbers_.size() != 1) {
+		std::cout << "Error\n";
 		return;
+	}
 	std::cout << numbers_.top() << std::endl;
 }
 
