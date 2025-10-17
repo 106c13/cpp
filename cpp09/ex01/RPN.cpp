@@ -49,8 +49,11 @@ void	RPN::calculate(const std::string& input) {
 				return;
 			}
 			numbers_.push(exec_(input[i]));
+		} else if (input[i] == ' ') {
+			continue;
 		}
-		else if (input[i] != ' ') {
+		i++;
+		if (input[i] != ' ' && input[i] != '\0') {
 			std::cout << "Error\n";
 			return;
 		}

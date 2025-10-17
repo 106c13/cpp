@@ -181,6 +181,8 @@ template void PmergeMe::mergeInsertSort< std::deque<int> >(std::deque<int>&);
 void PmergeMe::printBefore() const
 {
 	std::cout << "Before: ";
+	if (_vec.size() == 0)
+		std::cout << "Empty";
 	for (size_t i = 0; i < _vec.size(); ++i) {
 		std::cout << _vec[i] << " ";
 	}
@@ -190,6 +192,8 @@ void PmergeMe::printBefore() const
 void PmergeMe::printAfter() const
 {
 	std::cout << "After: ";
+	if (_vec.size() == 0)
+		std::cout << "Empty";
 	for (size_t i = 0; i < _vec.size(); ++i) {
 		std::cout << _vec[i] << " ";
 	}
@@ -211,9 +215,10 @@ void PmergeMe::sortAndMeasure()
 	double tvec = double(e1 - s1) / CLOCKS_PER_SEC * 1000000.0;
 	double tdeq = double(e2 - s2) / CLOCKS_PER_SEC * 1000000.0;
 
-	std::cout << "Time to process a range of " << _vec.size()
-			  << " elements with std::vector : " << tvec << " us" << std::endl;
-	std::cout << "Time to process a range of " << _deq.size()
-			  << " elements with std::deque  : " << tdeq << " us" << std::endl;
+	if (_vec.size() != 0) {
+		std::cout << "Time to process a range of " << _vec.size()
+				  << " elements with std::vector : " << tvec << " us" << std::endl;
+		std::cout << "Time to process a range of " << _deq.size()
+				  << " elements with std::deque  : " << tdeq << " us" << std::endl;
+	}
 }
-
