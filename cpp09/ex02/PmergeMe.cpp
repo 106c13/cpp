@@ -185,6 +185,11 @@ void PmergeMe::printBefore() const
 		std::cout << "Empty";
 	for (size_t i = 0; i < _vec.size(); ++i) {
 		std::cout << _vec[i] << " ";
+		if (i == 4)
+		{
+			std::cout << "[...]";
+			break;
+		}
 	}
 	std::cout << std::endl;
 }
@@ -196,6 +201,11 @@ void PmergeMe::printAfter() const
 		std::cout << "Empty";
 	for (size_t i = 0; i < _vec.size(); ++i) {
 		std::cout << _vec[i] << " ";
+		if (i == 4)
+		{
+			std::cout << "[...]";
+			break;
+		}
 	}
 	std::cout << std::endl;
 }
